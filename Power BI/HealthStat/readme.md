@@ -56,7 +56,7 @@ It serves as the central navigation point for the report and provides access to 
 
 The navigation structure allows users to move from high-level exploration into detailed hospital and performance analysis.
 
-![HealthStat Home](images/home.png)
+![HealthStat Home](/imgs/1.jpg)
 
 ---
 
@@ -89,7 +89,7 @@ The dashboard can be filtered to a specific hospital, such as **Albany Medical C
 - Diagnosis distribution
 - Patient disposition distribution
 
-![Hospital Profile](images/hospital-profile.png)
+![Hospital Profile](/imgs/2.jpg)
 
 ---
 
@@ -124,7 +124,7 @@ The Key Influencers analysis provides additional diagnostic insight into variabl
 - Risk of mortality
 - Health service area
 
-![LOS Comparison](images/los-comparison.png)
+![LOS Comparison](/imgs/3.jpg)
 
 ---
 
@@ -160,7 +160,7 @@ The scatter plot makes it possible to identify hospitals with:
 - Low cost and low LOS
 - Potentially unusual cost/LOS combinations
 
-![Cost Comparison](images/cost-comparison.png)
+![Cost Comparison](/imgs/4.jpg)
 
 ---
 
