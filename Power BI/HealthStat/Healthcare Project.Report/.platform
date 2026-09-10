@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Healthcare Project"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "25290e80-51a2-469a-b409-d6ad5d565610"
+  }
+}

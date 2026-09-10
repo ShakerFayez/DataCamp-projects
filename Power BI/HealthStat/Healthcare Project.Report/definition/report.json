@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY26SU05",
+      "reportVersionAtImport": {
+        "visual": "2.9.0",
+        "report": "3.3.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "HealthStat7842839709772474.json",
+      "reportVersionAtImport": {
+        "visual": "2.9.0",
+        "report": "3.3.0",
+        "page": "2.3.1"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY26SU05",
+          "path": "BaseThemes/CY26SU05.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "HealthStat7842839709772474.json",
+          "path": "HealthStat7842839709772474.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "PBI_Dashboard_Background42821048448535004.jpg",
+          "path": "PBI_Dashboard_Background42821048448535004.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "PBI_Dashboard_Background7931515041498868.jpg",
+          "path": "PBI_Dashboard_Background7931515041498868.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "PBI_Dashboard_Home_Page9551733929714401.jpg",
+          "path": "PBI_Dashboard_Home_Page9551733929714401.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "PBI_Dashboard_Hospital_Profile3155852904756631.jpg",
+          "path": "PBI_Dashboard_Hospital_Profile3155852904756631.jpg",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

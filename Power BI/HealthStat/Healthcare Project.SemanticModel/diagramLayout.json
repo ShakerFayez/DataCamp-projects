@@ -1,0 +1,61 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 328,
+            "y": 71
+          },
+          "nodeIndex": "hospital_discharges",
+          "nodeLineageTag": "eff6fcae-72e6-4256-be48-cdb60620ad83",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 628,
+            "y": 66
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "798974d4-c83c-41eb-9710-cb88ae7f1d22",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 90
+          },
+          "nodeIndex": "surgical_program_volume_summary",
+          "nodeLineageTag": "f86c0335-3420-4ad7-ac3f-f8f035717a58",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,70 @@
+table _Measures
+	lineageTag: 798974d4-c83c-41eb-9710-cb88ae7f1d22
+
+	measure 'Total Hospitals' = DISTINCTCOUNT(hospital_discharges[facility_id])
+		formatString: 0
+		lineageTag: b70ef053-a51f-44a0-9930-19fd36427be6
+
+	measure 'Total Discharges' = COUNTROWS(hospital_discharges)
+		formatString: 0
+		lineageTag: a0d2b1c3-c84d-4d0a-827b-fe8fe0d9edf9
+
+	measure 'Avg LOS Days' = AVERAGE(hospital_discharges[length_of_stay])
+		formatString: 0.00
+		lineageTag: 0af17cd4-4824-43a0-a3da-d76cadcaa6e2
+
+	measure 'Total Surgeons' = DISTINCTCOUNT(hospital_discharges[operating_provider_license_number])
+		formatString: 0
+		lineageTag: ee751562-7e3a-4816-a42f-a74947da2448
+
+	measure 'Avg Cost per Discharge' = AVERAGE(hospital_discharges[total_costs])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 6edd17f4-dcde-4171-b875-7c74faa8dde9
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Average LOS Days All' = CALCULATE([Avg LOS Days], ALL())
+		lineageTag: 0734fd20-bd7b-4da5-8562-c6426fb3e975
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Cost per Discharge All' = CALCULATE([Avg Cost per Discharge], ALL())
+		lineageTag: 9afb1044-1c2d-4464-bcaa-efc1f486d514
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Var Average Cost per Discharge' = DIVIDE(([Avg Cost per Discharge] - [Avg Cost per Discharge All]), [Avg Cost per Discharge All])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 8d2d8c81-8d3d-4f33-b4c6-e8742a3f6be1
+
+	measure '% Var Average LOS Days' = DIVIDE(([Avg LOS Days] - [Average LOS Days All]), [Average LOS Days All])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 868ea78c-8403-48c5-a957-c5cfb4aec600
+
+	measure 'Title Selected Facility' = ```
+			
+			VAR SelectedFacility = VALUES ( hospital_discharges[facility_name] )
+			RETURN
+			"Hospital: " & CONCATENATEX ( SelectedFacility, hospital_discharges[facility_name], ", " )
+			
+			```
+		lineageTag: 0b137581-7070-4337-b4a6-d5186f392a67
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: bfe09319-f1e6-4ac5-b4b8-167ed2b67508
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = be379fa0e3b54553b99badd9a1694df0
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

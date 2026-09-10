@@ -1,0 +1,41 @@
+table surgical_program_volume_summary
+	lineageTag: f86c0335-3420-4ad7-ac3f-f8f035717a58
+
+	column facility_name
+		lineageTag: db186cf2-6bec-4ea7-8639-7486240ae048
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: hospital_discharges[facility_name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_surgeons
+		formatString: 0
+		lineageTag: bba65b1a-02fb-4053-9ec8-fcb78a318240
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [total_surgeons]
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_discharges
+		formatString: 0
+		lineageTag: 19d1f7cf-ffdd-45f2-95f7-02454b3dccbb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [total_discharges]
+
+		annotation SummarizationSetBy = Automatic
+
+	column discharges_bins = SWITCH(TRUE(), surgical_program_volume_summary[total_discharges]<200, "<200", surgical_program_volume_summary[total_discharges] < 400, "200-399", surgical_program_volume_summary[total_discharges] < 600, "400-599", ">=600")
+		lineageTag: 55ffbb93-cc08-44c3-b167-66a7896b1bff
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition surgical_program_volume_summary = calculated
+		mode: import
+		source = SUMMARIZECOLUMNS(hospital_discharges[facility_name], "total_discharges", [Total Discharges], "total_surgeons", [Total Surgeons])
+
+	annotation PBI_Id = 476e5ba207db4c168878d90a4be57808
+
